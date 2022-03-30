@@ -18,7 +18,10 @@ jobs:
       run: docker build . --file Dockerfile --tag my-resume:$(date +%s)
     - name: list of docker images
       run: docker images
-    - name: login to docker hub
-      run: docker login -u ${{ secrets.USERNAME }} -p {{ secrets.PASSWORD }}
+    - name: Login to docker hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
     - name: pull image from docker hub
       run: docker pull anuj2112/my-resume:v1
