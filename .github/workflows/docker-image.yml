@@ -19,6 +19,6 @@ jobs:
     - name: list of docker images
       run: docker images
     - name: login to docker hub
-      run: docker login -u ${{ USERNAME }} -p {{ PASSWORD }}
+      run: docker login -u ${{ secrets.USERNAME }} -p {{ secrets.PASSWORD }}
     - name: pull image from docker hub
       run: docker pull anuj2112/my-resume:v1
