@@ -49,6 +49,6 @@ jobs:
       with:
 #         tag: ${{ steps.tag_version.outputs.new_tag }}
 #         custom_tag: ""
-        tag: ${{ step.tag_version }}
+        tag: ${{ step.tag_version.outputs }}
         name:  ${{ steps.tag_version.outputs.new_tag }}
         body: ${{ steps.tag_version.outputs.changelog }}
