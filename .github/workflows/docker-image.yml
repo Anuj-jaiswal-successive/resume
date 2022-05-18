@@ -24,3 +24,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
     - name: pull image from docker hub
       run: docker pull anuj2112/my-resume:v1
+    
+    - name: Create tag
+      uses: rickstaa/action-create-tag@v1
+      with:
+        tag: "latest"
+        message: "Latest release"
