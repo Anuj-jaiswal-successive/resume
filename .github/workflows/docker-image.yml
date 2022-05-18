@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: main
+    branches: release
 #   tags:
 #       - "0.0.0"
   pull_request:
