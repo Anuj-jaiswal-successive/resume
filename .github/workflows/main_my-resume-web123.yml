@@ -45,7 +45,6 @@ jobs:
           name: node-app
 
       - name: Create tag
-        id: create tag
         uses: rickstaa/action-create-tag@v1
         with:
           tag: "latest"
