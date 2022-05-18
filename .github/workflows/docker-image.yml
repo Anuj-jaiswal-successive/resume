@@ -2,7 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: release
+    branches:
+      - main
+      - release
 #   tags:
 #       - "0.0.0"
   pull_request:
@@ -46,6 +48,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
+        custom_tag: "v*.*.*"
         name: Release ${{ steps.tag_version.outputs.new_tag }}
         body: ${{ steps.tag_version.outputs.changelog }}
-        
