@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: main
 #   tags:
 #       - "0.0.0"
   pull_request:
@@ -32,7 +32,7 @@ jobs:
       with:
         flag_branch: true
         message: Bump version
-        #prev_tag: '0.0.0'
+        prev_tag: ''
         update_odoo_module_version: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
