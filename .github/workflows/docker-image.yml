@@ -5,8 +5,8 @@ on:
     branches:
       - main
       - release
-#   tags:
-#       - "0.0.0"
+    tags:
+      - "v0.0.0"
   pull_request:
     branches: [ main ]
 
@@ -47,8 +47,6 @@ jobs:
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
-#         tag: ${{ steps.tag_version.outputs.new_tag }}
-#         custom_tag: ""
-        tag: ${{ steps.tag_version.outputs }}
+        tag: ${{ steps.tag_version.outputs.new_tag }}
         name:  ${{ steps.tag_version.outputs.new_tag }}
         body: ${{ steps.tag_version.outputs.changelog }}
