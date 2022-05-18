@@ -1,7 +1,7 @@
 name: Create/update tag
 on:
   push:
-    branch: "main"
+    branch: "develop"
 jobs:
   create-tag:
     runs-on: ubuntu-latest
