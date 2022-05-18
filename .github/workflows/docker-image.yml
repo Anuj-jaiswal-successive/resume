@@ -27,7 +27,13 @@ jobs:
     - name: pull image from docker hub
       run: docker pull anuj2112/my-resume:v1
     
-    - name: Create tag
-      uses: rickstaa/action-create-tag@v1
+    - name: Create an incremental release
+      uses: aurestic/incrementarl-create-release@master
       with:
-        tag: "0.*.*"
+        flag_branch: true
+        message: Bump version
+        prev_tag: 'v'
+        update_odoo_module_version: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
